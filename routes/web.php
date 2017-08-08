@@ -25,7 +25,5 @@ Route::get('/posts/{post}', 'PostController@show');
 
 Route::post('/posts/{post}/comments', 'CommentsController@store');
 
-Route::edit('/posts/{id}/edit', 'PostController@edit');
-
 
 
