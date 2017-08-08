@@ -25,5 +25,7 @@ Route::get('/posts/{post}', 'PostController@show');
 
 Route::post('/posts/{post}/comments', 'CommentsController@store');
 
+Route::delete('/posts/{id}', 'PostController@delete');
+
 
 
