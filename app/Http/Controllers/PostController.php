@@ -43,7 +43,7 @@ class PostController extends Controller
 
         auth()->user()->publish(new Post(request(['title', 'body'])));
 
-        \request()->session()->flash('message', 'Post succesfully created');
+        \request()->session()->flash('message', 'Post successfully created');
 
         return redirect('/');
     }

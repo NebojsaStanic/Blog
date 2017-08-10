@@ -6,6 +6,24 @@
 
 		<h2>{{ $post->title }}</h2>
 
+		@if (count($post->tags) > 0)
+
+			<ul>
+
+				@foreach($post->tags as $tag)
+
+					<a href="/posts/tags/{{ $tag->name }}">
+
+						<li>{{ $tag->name }}</li>
+
+					</a>
+
+				@endforeach
+
+			</ul>
+
+		@endif
+
 		{{ $post->body }}
 
 		<hr>
