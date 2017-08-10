@@ -12,9 +12,7 @@ class PostController extends Controller
 
     public function __construct()
     {
-
         $this->middleware('auth')->except(['index', 'show']);
-
     }
 
     public function index()
@@ -45,12 +43,7 @@ class PostController extends Controller
 
         auth()->user()->publish(new Post(request(['title', 'body'])));
 
-        // Post::create([
-
-        //     'title' => request('title'),
-        //     'body' => request('body'),
-        //     'user_id' => auth()->user()->id
-        // ]);
+        \request()->session()->flash('message', 'Post succesfully created');
 
         return redirect('/');
     }

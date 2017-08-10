@@ -14,43 +14,16 @@ class RegistrationController extends Controller
 
 	public function create()
 	{
-
 		return view('registration.register');
-
 	}
 
 	public function store(RegistrationRequest $registrationRequest)
 	{
-        // logic moved to registration request
-		// validate form
-
-//		$this->validate(request(), [
-//
-//			'name' => 'required',
-//			'email' => 'required|email',
-//			'password' => 'required|confirmed'
-//
-//		]);
-
-
-		// create new user
-
-//		$user = User::create(request(['name', 'email', 'password']));
-//
-//		// login user
-//
-//		auth()->login($user);
-//
-//		Mail::to($user)->send(new WelcomeAgain($user));
-
         $registrationRequest->persist();
 
-		// redirect to home page
-
-
+        request()->session()->flash('message', 'Successfully registered!');
 
 		return redirect('/');
-
 	}    
 
 }
