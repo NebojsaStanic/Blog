@@ -38,5 +38,9 @@ Route::get('/logout', 'SessionsController@destroy');
 
 Route::get('/posts/tags/{tag}', 'TagsController@index');
 
+Route::get('/test', function (){
+   return view('test');
+});
+
 
 
